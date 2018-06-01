@@ -7,13 +7,13 @@ package main
 
 import (
 	"github.com/labstack/echo"
-	swaggerui "github.com/t-tashiro/yakiniku/swagger-ui"
 )
 
 func main() {
 	e := echo.New()
+	setup(e)
 
-	swaggerui.NewSwaggerController(e)
+	// swaggerui.NewSwaggerController(e)
 
 	e.Logger.Fatal(e.Start(":8081"))
 }
