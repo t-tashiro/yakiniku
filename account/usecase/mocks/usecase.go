@@ -5,21 +5,21 @@ import (
 	"github.com/t-tashiro/yakiniku/account"
 )
 
-// AccountRepository mock account repository
-type AccountRepository struct {
+// AccountUsecase mock account usecase
+type AccountUsecase struct {
 	mock.Mock
 }
 
-// List list mock accounts
-func (_m *AccountRepository) List() ([]*account.Account, error) {
+//List list mock accounts
+func (_m *AccountUsecase) List() ([]*account.Client, error) {
 	ret := _m.Called()
 
-	var r0 []*account.Account
-	if rf, ok := ret.Get(0).(func() []*account.Account); ok {
+	var r0 []*account.Client
+	if rf, ok := ret.Get(0).(func() []*account.Client); ok {
 		r0 = rf()
 	} else {
 		if ret.Get(0) != nil {
-			r0 = ret.Get(0).([]*account.Account)
+			r0 = ret.Get(0).([]*account.Client)
 		}
 	}
 
